@@ -38,7 +38,7 @@ public class ConsultationService {
         //Implement this method to update the consultation
         // create an object of Consultation and make use of setters to set Suggestion, Comments, and UpdatedOn values
         // make use of save() method of consultationRepository to return the Consultation object
-        Consultation consultation = new Consultation();
+        Consultation consultation = consultationRepository.findByRequest(testRequest).get();
         consultation.setComments(createConsultationRequest.getComments());
         consultation.setSuggestion(createConsultationRequest.getSuggestion());
         consultation.setUpdatedOn(testRequest.getCreated());

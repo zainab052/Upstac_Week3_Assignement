@@ -57,7 +57,7 @@ public class LabResultService {
         // HeartBeat, OxygenLevel, Temperature, Result and UpdatedOn values
         // make use of the saveLabResult() method to return the object of LabResult
 
-       LabResult labResult = new LabResult();
+       LabResult labResult = labResultRepository.findByRequest(testRequest).get();
        labResult.setBloodPressure(createLabResult.getBloodPressure());
        labResult.setComments(createLabResult.getComments());
        labResult.setHeartBeat(createLabResult.getHeartBeat());
